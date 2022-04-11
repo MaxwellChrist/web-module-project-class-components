@@ -38,6 +38,12 @@ export default class App extends React.Component {
     })
   }
 
+  hide = (e) => {
+    this.setState({
+      tasks: this.state.tasks.filter(task => !task.completed)
+    })
+  }
+
   toggleTasks = (itemId) => {
     console.log(itemId);
     this.setState({
@@ -60,7 +66,7 @@ export default class App extends React.Component {
         <h2>Todos:</h2>
         <TodoList tasks={this.state.tasks} toggleTasks={this.toggleTasks} />
         <Form add={this.add} />
-        <button>Hide Completed</button>
+        <button onClick={this.hide}>Hide Completed</button>
       </div>
     )
   }
