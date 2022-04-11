@@ -2,10 +2,9 @@ import React from 'react'
 
 export default class Todo extends React.Component {
   render() {
+    console.log(this.props);
     return (
-      <div>
-        Todo
-      </div>
+      <li>{this.props.task.task}</li>
     )
   }
 }
